@@ -8,8 +8,10 @@ router.route('/:postId')
   .get(auth, async (req, res) => {
     const postId = req.params.postId;
 
-    const comments = await Comments.findAll({ where: { postId: postId } })
-    console.log(comments)
+    const comments = await Comments.findAll({ 
+      where: { postId: postId },
+      order:[['createdAt','DESC']] 
+    })
     if (comments.length) {
       const data = comments.map((comments) => {
         return {

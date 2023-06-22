@@ -9,7 +9,7 @@ const { Posts } = require('../models');
 
 router.route('/')
   .get(async (req, res) => {
-    const posts = await Posts.findAll()
+    const posts = await Posts.findAll({order:[['createdAt','DESC']]})
     if (posts.length) {
       const results = posts.map((post) => {
         return {
