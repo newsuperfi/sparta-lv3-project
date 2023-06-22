@@ -13,8 +13,7 @@ router.route('/')
     if (posts.length) {
       const results = posts.map((post) => {
         return {
-          "_Id": post._id,
-          "작성자": post.user,
+          "작성자": post.writer,
           "제목": post.title,
           "작성일시": post.createdAt,
         };
