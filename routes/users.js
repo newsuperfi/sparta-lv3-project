@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Users, Posts, Comments } = require('../models');
+const { Users } = require('../models');
 const { Op } = require('sequelize');
 const jwt = require('jsonwebtoken');
 
